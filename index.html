@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+    <script src="../build/aframe-ar.js"></script>
+</head>
+<body style='margin: 0px; overflow: hidden; font-family: Monospace;'>
+<div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+    <a href="https://github.com/jeromeetienne/AR.js/" target="_blank">AR.js</a> - example for a-frame
+    <br/>
+    Contact me any time at <a href='https://twitter.com/jerome_etienne' target='_blank'>@jerome_etienne</a>
+</div>
+<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+    <!-- Custom Marker 1 -->
+    <a-marker type='pattern' url='URL_TO_CUSTOM_MARKER_1_IMAGE'>
+        <!-- Video Asset 1 -->
+        <a-video src="#video1" width="4" height="2" position='0 0.5 0' rotation='0 180 0'></a-video>
+    </a-marker>
+    <!-- Custom Marker 2 -->
+    <a-marker type='pattern' url='URL_TO_CUSTOM_MARKER_2_IMAGE'>
+        <!-- Video Asset 2 -->
+        <a-video src="#video2" width="4" height="2" position='0 0.5 0' rotation='0 180 0'></a-video>
+    </a-marker>
+    <!-- Custom Marker 3 -->
+    <a-marker type='pattern' url='URL_TO_CUSTOM_MARKER_3_IMAGE'>
+        <!-- Video Asset 3 -->
+        <a-video src="#video3" width="4" height="2" position='0 0.5 0' rotation='0 180 0'></a-video>
+    </a-marker>
+    <!-- Define Video Assets -->
+    <a-assets>
+        <video id="video1" autoplay loop crossorigin="anonymous" playsinline>
+            <source src="URL_TO_VIDEO_1" type="video/mp4">
+        </video>
+        <video id="video2" autoplay loop crossorigin="anonymous" playsinline>
+            <source src="URL_TO_VIDEO_2" type="video/mp4">
+        </video>
+        <video id="video3" autoplay loop crossorigin="anonymous" playsinline>
+            <source src="URL_TO_VIDEO_3" type="video/mp4">
+        </video>
+    </a-assets>
+    <!-- Add a simple camera -->
+    <a-entity camera></a-entity>
+</a-scene>
+</body>
+</html>
